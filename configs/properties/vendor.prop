@@ -266,6 +266,9 @@ vendor.display.scaling_source_opt_mode=4
 vendor.display.use_smooth_motion=0
 vendor.display.vds_allow_hwc=1
 
+# displayfeature
+persist.sys.sf.native_mode=258
+
 # Dolby
 ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.dolby.dax.version=DAX3_3.8.5.20_r1
