@@ -46,6 +46,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
+# Euicc
+PRODUCT_PACKAGES += \
+    XiaomiEuicc
+
+# Powershare
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
