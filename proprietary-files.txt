@@ -2463,6 +2463,9 @@ odm/lib64/MLPD_3.pickle
 odm/lib64/MLPD_4.pickle
 odm/lib64/MLPD_5.pickle
 
+# Misc
+system_ext/lib64/libbeluga.so
+
 # Mlipay
 odm/bin/fidoca
 odm/bin/mlipayd
