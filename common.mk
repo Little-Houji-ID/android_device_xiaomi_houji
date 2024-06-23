@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndcardparser \
     libvolumelistener \
-    libhfp_pal
+    libhfp_pal \
+    libfmpal
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
 
