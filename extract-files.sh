@@ -63,6 +63,9 @@ function blob_fixup() {
         odm/etc/camera/enhance_motiontuning.xml | odm/etc/camera/night_motiontuning.xml | odm/etc/camera/motiontuning.xml)
             sed -i 's/<?xml=/<?xml /g' "${2}"
             ;;
+        vendor/lib64/libqcodec2_core.so)
+            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
+            ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio)/d" "${2}"
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
