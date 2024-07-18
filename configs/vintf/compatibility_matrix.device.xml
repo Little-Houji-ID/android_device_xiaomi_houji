@@ -57,7 +57,6 @@
             <name>IComponentStore</name>
             <instance>default</instance>
             <instance>dolby</instance>
-            <instance>ozoaudio</instance>
             <instance>software</instance>
         </interface>
     </hal>
@@ -126,13 +125,6 @@
         <name>android.se.omapi</name>
         <interface>
             <name>ISecureElementService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>com.android.ozoaudio.notify</name>
-        <interface>
-            <name>IOzoNotify</name>
             <instance>default</instance>
         </interface>
     </hal>
