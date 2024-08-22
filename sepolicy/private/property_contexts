@@ -22,3 +22,6 @@ ro.product.mod_device                   u:object_r:exported_default_prop:s0 exac
 # Ril
 ro.carrier.name                         u:object_r:exported_default_prop:s0
 ro.ril.oem.wifimac                      u:object_r:vendor_radio_prop:s0
+
+# SettingsLib
+settingsdebug.instant.packages u:object_r:settingslib_prop:s0

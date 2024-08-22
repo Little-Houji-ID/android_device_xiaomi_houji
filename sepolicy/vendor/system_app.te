@@ -25,3 +25,4 @@ binder_call(system_app, vendor_hal_displayfeature_xiaomi_default)
 # Thermal
 get_prop(system_app, vendor_thermal_normal_prop)
 allow system_app sysfs_thermal:file write;
+allow system_app sysfs_thermal:file rw_file_perms;
