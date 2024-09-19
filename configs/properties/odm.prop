@@ -2,6 +2,10 @@
 debug.config.video.p3.encode.support=true
 debug.config.video.p3.decode.support=true
 
+# Display
+ro.vendor.touchfeature.type=247
+vendor.display.enable_spr=1
+
 # displayfeature
 persist.sys.sf.native_mode=258
 vendor.mi_sf.enable_second_refresh_rate_overlay=1
