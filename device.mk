@@ -50,6 +50,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     XiaomiEuicc
 
+# init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.houji.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.houji.rc \
+
 # Powershare
 PRODUCT_PACKAGES += \
     checkpoint_gc \
@@ -273,6 +277,7 @@ PRODUCT_PACKAGES += \
     CarrierConfig \
     FrameworksResXiaomi \
     FrameworksResHouji \
+    HoujiEuiccOverlay \
     SettingsOverlayHouji \
     SystemUIResHouji \
     SettingsResXiaomi \
