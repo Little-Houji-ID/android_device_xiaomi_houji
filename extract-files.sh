@@ -68,6 +68,10 @@ function blob_fixup() {
             grep -q "libcodec2_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
             "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
             ;;
+        vendor/bin/hw/vendor.qti.media.c2@1.0-service | vendor/bin/hw/vendor.dolby.media.c2@1.0-service | vendor/bin/hw/vendor.qti.media.c2audio@1.0-service)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libshim.so" "${2}"
+            ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio)/d" "${2}"
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"

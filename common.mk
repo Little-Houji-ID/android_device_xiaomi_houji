@@ -404,7 +404,8 @@ PRODUCT_PACKAGES += \
 
 # Shim
 PRODUCT_PACKAGES += \
-    libhidlbase_shim
+    libhidlbase_shim \
+    libshim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
