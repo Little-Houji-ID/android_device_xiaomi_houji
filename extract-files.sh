@@ -64,6 +64,7 @@ function blob_fixup() {
             sed -i 's/<?xml=/<?xml /g' "${2}"
             ;;
         vendor/lib64/libqcodec2_core.so)
+            grep -q "libcodec2_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
             "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
             ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
