@@ -445,7 +445,7 @@ vendor/etc/init/dataqti.rc
 vendor/etc/init/nicmd.rc
 vendor/etc/init/port-bridge.rc
 vendor/etc/init/shsusrd.rc
-vendor/etc/seccomp_policy/atfwd@2.0.policy
+vendor/etc/seccomp_policy/atfwd@2.0.policy|8000172f1595d94f84faa443bab2862e7e6b6400
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -699,7 +699,7 @@ vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/seccomp_policy/gnss@2.0-base.policy
 vendor/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy
-vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy
+vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy|3a026fbb4535edb5c751f75c632364d8d46fec56
 vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy
 vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
@@ -1382,7 +1382,7 @@ vendor/etc/init/vendor.qsap.qapeservice.rc
 vendor/etc/init/vendor.qsap.sensors.rc
 vendor/etc/seccomp_policy/qsap_dcfd.policy
 vendor/etc/seccomp_policy/qsap_qapeservice.policy
-vendor/etc/seccomp_policy/qsap_sensors.policy
+vendor/etc/seccomp_policy/qsap_sensors.policy|8fcd82551b6a9445d9c9b04d9a45c306c55d30e4
 vendor/etc/seccomp_policy/qsap_voiceui.policy
 vendor/lib64/libDcfHalFramework.so
 vendor/lib64/libDcfHalLogger.so
@@ -1956,7 +1956,7 @@ vendor/bin/wifidisplayhalservice
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/wfdvndservice.rc
-vendor/etc/seccomp_policy/wfdhdcphalservice.policy
+vendor/etc/seccomp_policy/wfdhdcphalservice.policy|f7bb51d41ad6fbdfaa036e698b339e5134e0ef95
 vendor/etc/seccomp_policy/wfdvndservice.policy
 vendor/etc/seccomp_policy/wifidisplayhalservice.policy
 vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml
