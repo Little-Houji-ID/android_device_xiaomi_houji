@@ -6,6 +6,7 @@
 
 #define LOG_TAG "UdfpsHandler.xiaomi_sm8650"
 
+#include <aidl/android/hardware/biometrics/fingerprint/BnFingerprint.h>
 #include <android-base/logging.h>
 #include <android-base/unique_fd.h>
 
@@ -33,6 +34,8 @@
 #define DISP_PARAM_LOCAL_HBM_ON "1"
 
 #define FINGERPRINT_ACQUIRED_VENDOR 7
+
+using ::aidl::android::hardware::biometrics::fingerprint::AcquiredInfo;
 
 namespace {
 
@@ -72,7 +75,7 @@ class XiaomiSM8650UdfpsHandler : public UdfpsHandler {
             // Set finger as up to disable HBM already, even if the finger is still pressed
             setFingerDown(false);
 
-            if (result == FINGERPRINT_ACQUIRED_GOOD) {
+            if (static_cast<AcquiredInfo>(result) == AcquiredInfo::GOOD) {
                 // Disable local‑HBM immediately on successful auth
                 set(DISP_PARAM_PATH,
                     std::string(DISP_PARAM_LOCAL_HBM_MODE) + " " +
