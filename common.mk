@@ -400,7 +400,11 @@ PRODUCT_PACKAGES += \
 
 # Servicetracker
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2.vendor \
+    vendor.qti.hardware.servicetracker@1.2.vendor
+
+# Shim
+PRODUCT_PACKAGES += \
+    libhidlbase_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

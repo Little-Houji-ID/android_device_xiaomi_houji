@@ -73,6 +73,11 @@ function blob_fixup() {
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
             sed -i "/av1.decoder/,/<\/MediaCodec>/d" "${2}"
             ;;
+        vendor/bin/vendor.dpmd)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "vendor.libdpmframework.so" "${2}"
+            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
+            ;;
     esac
 }
 
