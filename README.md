@@ -6,4 +6,5 @@ Currently supported devices
 - Xiaomi 14 Ultra (Aurora)
 - Xiaomi Redmi K70 Pro (Manet)
 - Xiaomi Mix Fold 4 (Goku)
-- Xiaomi Mix Flip 2 (Ryui)
+- Xiaomi Mix Flip 2 (Ruyi)
+- Redmi K80 (Zorn)
