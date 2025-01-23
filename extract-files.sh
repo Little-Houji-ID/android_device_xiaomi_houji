@@ -74,8 +74,6 @@ function blob_fixup() {
             ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio)/d" "${2}"
-            sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
-            sed -i "/av1.decoder/,/<\/MediaCodec>/d" "${2}"
             ;;
         vendor/bin/vendor.dpmd)
             [ "$2" = "" ] && return 0
