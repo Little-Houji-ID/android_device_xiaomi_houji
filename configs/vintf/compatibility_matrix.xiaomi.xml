@@ -234,16 +234,9 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.micharge</name>
-        <version>1.0</version>
-        <interface>
-            <name>IMiCharge</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.xiaomi.hardware.micharge</name>
+        <version>2</version>
         <interface>
             <name>IMiCharge</name>
             <instance>default</instance>
@@ -606,6 +599,13 @@
         <name>vendor.xiaomi.hw.touchfeature</name>
         <interface>
             <name>ITouchFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>com.fingerprints.fpc.extension</name>
+        <interface>
+            <name>IFpcExtension</name>
             <instance>default</instance>
         </interface>
     </hal>
