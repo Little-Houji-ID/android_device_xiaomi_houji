@@ -72,3 +72,9 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     ioprio rt 4
     task_profiles ProcessCapacityHigh HighPerformance
     onrestart restart audioserver
+
+on property:sys.perf_mode_active=1
+    write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 1
+
+on property:sys.perf_mode_active=0
+    write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 0
