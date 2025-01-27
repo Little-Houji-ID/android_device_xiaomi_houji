@@ -81,7 +81,6 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # AGM
 vendor/lib64/libagm.so
-vendor/lib64/libagmmixer.so
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 
 # Audio
@@ -127,7 +126,6 @@ vendor/lib64/libmisoundfx_ext.so
 vendor/lib64/libmisoundsa.so
 vendor/lib64/libmisoundsa_fx.so
 vendor/lib64/libmispowerop.so
-vendor/lib64/libmisr.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libresampler.so
@@ -223,26 +221,13 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 
 # Camera
-odm/bin/hw/vendor.qti.camera.provider-service_64
 odm/etc/init/vendor.qti.camera.provider-service_64.rc
 odm/etc/vintf/manifest/vendor.qti.camera.offlinecamera-impl.xml
 odm/etc/vintf/manifest/vendor.qti.camera.postproc-impl.xml
 odm/etc/vintf/manifest/vendor.qti.camera.provider.xml
 odm/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
-odm/lib64/vendor.qti.hardware.camera.aon-service-impl.so;DISABLE_CHECKELF
-odm/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so;DISABLE_CHECKELF
-odm/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so;DISABLE_CHECKELF
-odm/lib64/vendor.xiaomi.hardware.aidlbgservice-V1-impl.so
-odm/lib64/vendor.xiaomi.hardware.aidlbgservice-V1-ndk_platform.so
-odm/lib64/vendor.xiaomi.hardware.bgservice@1.0-impl.so
-odm/lib64/vendor.xiaomi.hardware.bgservice@1.0.so
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
-vendor/lib64/vendor.qti.hardware.camera.offlinecamera-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.camera.offlinecamera-V2-ndk.so
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.aon-V1-ndk.so
-vendor/lib64/vendor.xiaomi.hardware.quickcamera-V1-ndk.so
 
 # Camera Firmware
 odm/firmware/CAMERA_ICP_170.elf
@@ -972,8 +957,6 @@ vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/lib64/libEvrcSwCodec.so
-vendor/lib64/libmilut.so
-vendor/lib64/libmips.so
 vendor/lib64/libQcelp13SwCodec.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
@@ -994,10 +977,10 @@ vendor/lib64/libqcodec2_filterbase.so
 vendor/lib64/libqcodec2_hooks.so
 vendor/lib64/libqcodec2_imgtxrfilter.so
 vendor/lib64/libqcodec2_mockfilter.so
-vendor/lib64/libqcodec2_mocklutfilter.so
+vendor/lib64/libqcodec2_mocklutfilter.so;DISABLE_CHECKELF
 vendor/lib64/libqcodec2_platform.so
-vendor/lib64/libqcodec2_psfilter.so
-vendor/lib64/libqcodec2_srfilter.so
+vendor/lib64/libqcodec2_psfilter.so;DISABLE_CHECKELF
+vendor/lib64/libqcodec2_srfilter.so;DISABLE_CHECKELF
 vendor/lib64/libqcodec2_streaminteg_filter.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
@@ -1414,7 +1397,6 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 vendor/bin/vendor.qti.qspa-service
 vendor/etc/init/vendor.qti.qspa-service.rc
 vendor/etc/vintf/manifest/vendor.qti.qspa-service.xml
-vendor/lib64/vendor.qti.hardware.qspa-V1-ndk.so
 
 # QSPM
 vendor/bin/vendor.qti.qspmhal-service
@@ -1460,6 +1442,8 @@ vendor/lib64/libMapService.so
 vendor/lib64/libScenescape.so
 vendor/lib64/libStereoRectifyWrapper.so
 vendor/lib64/libeye_tracking_dsp_sample_stub.so
+vendor/lib64/libqvrcameraplayback.so
+vendor/lib64/libqvrservice_client.qti.so
 vendor/lib64/vendor.qti.qegahal-V1-ndk_platform.so
 
 # QXR
@@ -1796,6 +1780,7 @@ odm/bin/toucheventcheck
 odm/etc/init.panel_info.sh
 odm/etc/init/vendor.xiaomi.hw.touchfeature-service.rc
 odm/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature-service.xml
+odm/lib64/libtensorflowlite_touch_c.so
 odm/lib64/libtouchreport.so
 odm/lib64/libtouchsensor.so
 vendor/lib64/vendor.xiaomi.hw.touchfeature-V1-ndk_platform.so
