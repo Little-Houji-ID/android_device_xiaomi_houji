@@ -162,12 +162,14 @@ PRODUCT_COPY_FILES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer3-V2-ndk.vendor \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh \
     libgralloc.qti \
     libqdMetaData \
     vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer3-V1-ndk.vendor \
     vendor.qti.hardware.display.composer-service.rc \
     vendor.qti.hardware.display.composer-service.xml \
     vendor.qti.hardware.display.demura-service
