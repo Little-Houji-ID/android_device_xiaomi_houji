@@ -196,6 +196,9 @@ PRODUCT_PACKAGES += \
     IPACM_Filter_cfg.xml
 
 # IR Blaster
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.example
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 
