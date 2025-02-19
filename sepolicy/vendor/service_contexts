@@ -5,7 +5,6 @@ vendor.xiaomi.hardware.aon.IAlwaysOn/miaonservicehal           u:object_r:vendor
 
 # CIT
 vendor.xiaomi.sensor.citsensorservice.ICitSensorService/default   u:object_r:vendor_hal_citsensorservice_xiaomi_service:s0
-vendor.xiaomi.sensor.tofsensorservice.ITofSensorService/default   u:object_r:vendor_hal_tofsensorservice_xiaomi_service:s0
 
 # Display
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default       u:object_r:vendor_hal_displayfeature_xiaomi_service:s0

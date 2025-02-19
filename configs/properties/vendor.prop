@@ -127,9 +127,6 @@ persist.vendor.dpm.vndr.feature=1
 drm.service.enabled=true
 vendor.wv.oemcrypto.debug.enable_prov40=true
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 

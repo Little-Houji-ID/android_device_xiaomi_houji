@@ -37,10 +37,6 @@ attribute hal_tidaservice;
 attribute hal_tidaservice_client;
 attribute hal_tidaservice_server;
 
-attribute vendor_hal_tofsensorservice_xiaomi;
-attribute vendor_hal_tofsensorservice_xiaomi_client;
-attribute vendor_hal_tofsensorservice_xiaomi_server;
-
 # Sensors
 attribute vendor_hal_citsensorservice_xiaomi;
 attribute vendor_hal_citsensorservice_xiaomi_client;
