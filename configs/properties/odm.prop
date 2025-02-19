@@ -16,6 +16,10 @@ vendor.audio.mic.status=off
 vendor.audio.rt.mode.onlyfast=false
 vendor.audio.rt.mode=19
 
+# Camera
+debug.config.video.p3.encode.support=true
+debug.config.video.p3.decode.support=true
+
 # displayfeature
 persist.sys.sf.native_mode=258
 vendor.mi_sf.enable_second_refresh_rate_overlay=1
