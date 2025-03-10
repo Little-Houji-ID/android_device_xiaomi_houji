@@ -227,6 +227,7 @@ odm/etc/vintf/manifest/vendor.qti.camera.provider.xml
 odm/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
+vendor/framework/androidx.camera.extensions.impl.jar
 
 # Camera Firmware
 odm/firmware/CAMERA_ICP_170.elf
