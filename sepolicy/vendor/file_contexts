@@ -29,6 +29,9 @@
 /vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service                                   u:object_r:mediacodec_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service               u:object_r:hal_dms_default_exec:s0
 
+# Dumpstate
+/vendor/bin/hw/android\.hardware\.dumpstate-service.xiaomi u:object_r:hal_dumpstate_impl_exec:s0
+
 # EID
 /(vendor|system/vendor)/bin/hw/vendor\.rongcard\.eid@1\.0-service                      u:object_r:vendor_hal_eid_rc_exec:s0
 
