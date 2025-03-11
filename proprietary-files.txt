@@ -656,13 +656,9 @@ vendor/lib64/vendor.qti.hardware.embmsslaidl-V1-ndk.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # Fingerprint
-odm/bin/hw/vendor.xiaomi.hardware.dtool1-service
-odm/etc/init/vendor.xiaomi.hardware.dtool1.rc
-odm/etc/vintf/manifest/AHBF-V3-service.xml
-odm/etc/vintf/manifest/fod-aidl.xml
-vendor/lib64/com.fingerprints.extension3-V1-ndk.so
-vendor/lib64/vendor.xiaomi.hardware.dtool1-V1-ndk.so
+vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel-V1-ndk.so
+odm/etc/vintf/manifest/fod-aidl.xml
 
 # FM
 vendor/etc/init.qti.fm.sh
