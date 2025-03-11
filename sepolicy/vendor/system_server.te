@@ -31,10 +31,6 @@ allow system_server proc_last_kmsg:file r_file_perms;
 # Memory
 r_dir_file(system_server, vendor_sysfs_memory)
 
-# MiCharge
-allow system_server vendor_hal_micharge_xiaomi_service:service_manager find;
-allow system_server vendor_hal_micharge_xiaomi_default:binder { call transfer };
-
 # Misys
 allow system_server hal_misys_default:binder call;
 allow system_server hal_misys_hwservice:hwservice_manager find;
