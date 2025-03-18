@@ -61,6 +61,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service'
     ): blob_fixup()
         .add_needed('libshim.so'),
+    'vendor/etc/sensors/hals.conf': blob_fixup()
+        .add_line_if_missing('sensors.xiaomi.v2.so'),
     (
         'vendor/etc/media_codecs_pinaepple.xml', 
         'vendor/etc/media_codecs_pinaepple_vendor.xml'
