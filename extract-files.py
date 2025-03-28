@@ -103,6 +103,10 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
     (
+        'vendor/lib64/libqcodec2_core.so',
+    ):blob_fixup()
+        .add_needed('libcodec2_shim.so'),
+    (
         'vendor/lib64/libdlbdsservice.so',
         'vendor/lib64/libdlbpreg.so',
         'vendor/lib64/soundfx/libdlbvol.so',
