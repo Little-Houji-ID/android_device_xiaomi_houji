@@ -104,6 +104,10 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/hw/audio.primary.pineapple.so', 'vendor/lib64/libaudioroute_ext.so'): blob_fixup()
         .add_needed('libaudioroute-v34.so'),
     (
+        'vendor/lib64/libqcodec2_core.so',
+    ):blob_fixup()
+        .add_needed('libcodec2_shim.so'),
+    (
         'vendor/lib64/libdlbdsservice.so',
         'vendor/lib64/libdlbpreg.so',
         'vendor/lib64/soundfx/libdlbvol.so',
