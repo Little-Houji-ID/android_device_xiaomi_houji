@@ -6,7 +6,6 @@
 
 soong_namespace {
     imports: [
-        "hardware/qcom-caf/bootctrl",
         "hardware/xiaomi",
     ],
 }
@@ -37,13 +36,6 @@ install_symlink {
     vendor: true,
     installed_location: "rfs/msm/mpss/readonly/mbnconfig",
     symlink_target: "/data/vendor/mbnconfig",
-}
-
-install_symlink {
-    name: "rfs_msm_mpss_readonly_modem_firmware_symlink",
-    vendor: true,
-    installed_location: "rfs/msm/mpss/readonly/firmware",
-    symlink_target: "/vendor/modem_firmware",
 }
 
 mkdir {
