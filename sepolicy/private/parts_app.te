@@ -57,8 +57,8 @@ allow parts_app vendor_hal_displayfeature_xiaomi_hwservice:hwservice_manager fin
 
 allow parts_app vendor_hal_displayfeature_xiaomi_service:binder { call transfer };
 allow parts_app vendor_hal_displayfeature_xiaomi_default:binder { call transfer };
-dontaudit parts_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
-dontaudit parts_app vendor_hal_displayfeature_xiaomi_default:service_manager find;
+allow parts_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
+allow parts_app vendor_hal_displayfeature_xiaomi_default:service_manager find;
 
 hal_client_domain(parts_app, hal_touchfeature_xiaomi)
 binder_call(parts_app, hal_touchfeature_xiaomi)
