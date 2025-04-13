@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Xiaomi 14 (OS2.0.9.0.VNCMIXM). 
+## are from Xiaomi 14 (OS2.0.100.0.VNCMIXM). 
 
 # ACDB
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
@@ -193,8 +193,6 @@ vendor/etc/init/hw/init.batterysecret.rc
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
-vendor/etc/vintf/manifest/bluetooth_audio.xml
-vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
@@ -1012,8 +1010,6 @@ vendor/lib64/libdolbyottcameracontrol.so
 
 # Memtrack
 vendor/bin/hw/vendor.qti.hardware.memtrack-service
-vendor/etc/init/memtrack_qti.rc
-vendor/etc/vintf/manifest/memtrack_qti.xml
 
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory-service
@@ -1097,11 +1093,6 @@ odm/bin/hw/android.hardware.nqnfc-service.nxp
 odm/etc/init/nfc-service-nxp.rc
 odm/lib64/nfc_nci.nqx.default.hw.so
 vendor/bin/nqnfcinfo
-vendor/bin/pnscr
-vendor/bin/pnscr-mi
-vendor/bin/pnscr-rf
-vendor/bin/pnscr-sst
-vendor/bin/pnscr-v5
 vendor/etc/1-SN1X0_SPC.txt
 vendor/etc/libnfc-mtp-SN100_38_4MHZ.conf
 vendor/etc/libnfc-mtp-SN100.conf
@@ -1110,27 +1101,6 @@ vendor/etc/libnfc-qrd-SN100_38_4MHZ.conf
 vendor/etc/libnfc-qrd-SN100.conf
 vendor/etc/libnfc-SN220_19_2MHZ.conf
 vendor/etc/libnfc-SN220_38_4MHZ.conf
-vendor/etc/nfcon.pnscr
-vendor/etc/sn100u_bootup.pnscr
-vendor/etc/sn100u_ese_disableIso.pnscr
-vendor/etc/sn100u_ese_disableIsoRead.pnscr
-vendor/etc/sn100u_nfcon.pnscr
-vendor/etc/sn100u_pnx_chr.pnscr
-vendor/etc/sn100u_pnx_cui.pnscr
-vendor/etc/sn100u_pnx_ese_3_hce.pnscr
-vendor/etc/sn100u_pnx_ese_3.pnscr
-vendor/etc/sn100u_pnx_ese_aclog.pnscr
-vendor/etc/sn100u_pnx_ese_cplc.pnscr
-vendor/etc/sn100u_pnx_ese_fabkey.pnscr
-vendor/etc/sn100u_pnx_ese_free.pnscr
-vendor/etc/sn100u_pnx_ese_keyset.pnscr
-vendor/etc/sn100u_pnx_ese_sei2c_disable.pnscr
-vendor/etc/sn100u_pnx_ese_sei2c_enable.pnscr
-vendor/etc/sn100u_pnx_ese_sei2c_read.pnscr
-vendor/etc/sn100u_pnx_ese_sn.pnscr
-vendor/etc/sn100u_pnx_ndi.pnscr
-vendor/etc/sn100u_pnx_pcv.pnscr
-vendor/etc/sn100u_pnx_sst.pnscr
 vendor/lib64/libsn100u_fw.so
 vendor/lib64/libsn220u_fw.so
 vendor/lib64/libvui_dmgr.so
@@ -1381,8 +1351,6 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # QSPA
 vendor/bin/vendor.qti.qspa-service
-vendor/etc/init/vendor.qti.qspa-service.rc
-vendor/etc/vintf/manifest/vendor.qti.qspa-service.xml
 
 # QSPM
 vendor/bin/vendor.qti.qspmhal-service
