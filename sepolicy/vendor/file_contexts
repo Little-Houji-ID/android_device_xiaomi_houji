@@ -119,6 +119,9 @@
 /sys/devices/virtual/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
 /sys/class/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
 
+# Touch
+/sys/devices/virtual/touch/touch_dev/fod_press_status u:object_r:sysfs_touchpanel:s0
+
 # Touch Sampling
 /sys/devices/platform/goodix_ts.0/switch_report_rate                                               u:object_r:sysfs_htsr:s0
 
