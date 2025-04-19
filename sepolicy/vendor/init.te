@@ -5,6 +5,9 @@ allow init vendor_sysfs_qcom_battery:file setattr;
 
 # Displayfeature
 set_prop(init, vendor_displayfeature_prop)
+allow init vendor_sysfs_battery_supply:file { open read getattr setattr};
+allow init sysfs_fastcharge:file { setattr };
+allow init vendor_sysfs_power_supply:file { setattr };
 set_prop(vendor_init, vendor_displayfeature_prop)
 
 # last_kmsg
@@ -44,3 +47,4 @@ set_prop(vendor_init, vendor_nfc_mi_prop)
 set_prop(vendor_init, vendor_fp_prop)
 set_prop(vendor_init, vendor_thermal_normal_prop)
 set_prop(vendor_init, vendor_fp_info_prop)
+r_dir_file(init, sysfs_batteryinfo)
