@@ -371,5 +371,12 @@
              </intent-filter>
         </receiver>
 
+        <service 
+            android:name=".touch.DoubleTapService"
+            android:exported="false"/>
+
+        <service 
+            android:name=".touch.SoFodTouchService"
+            android:exported="false"/>
     </application>
 </manifest>
