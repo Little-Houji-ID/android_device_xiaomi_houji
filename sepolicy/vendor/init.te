@@ -34,3 +34,13 @@ allow init tpevent:process { rlimitinh siginh transition };
 allow init touchreport_exec:file { execute getattr open read };
 allow init touchreport:process { rlimitinh siginh transition };
 set_prop(vendor_init, vendor_touchfeature_prop)
+
+# Misc
+allow vendor_init sysfs:lnk_file setattr;
+set_prop(vendor_init, vendor_ssr_prop)
+set_prop(vendor_init, vendor_qcc_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_nfc_mi_prop)
+set_prop(vendor_init, vendor_fp_prop)
+set_prop(vendor_init, vendor_thermal_normal_prop)
+set_prop(vendor_init, vendor_fp_info_prop)
