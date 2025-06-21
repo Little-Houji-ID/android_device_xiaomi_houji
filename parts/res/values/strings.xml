@@ -80,14 +80,6 @@
     <string name="image_preview_next_page_content_description">Next</string>
     <string name="image_preview_previous_page_content_description">Previous</string>
 
-    <!-- High Touch Polling -->
-    <string name="htsr_title">Enhanced Touch Responsiveness</string>
-    <string name="htsr_enable_title">High Touch Polling Rate</string>
-    <string name="htsr_enable_summary">Increases touch polling rate to decrease touch input latency for a smoother experience</string>
-    <string name="touch_sampling_mode_title">High Touch Polling Mode</string>
-    <string name="touch_sampling_mode_notification">High Touch Polling Rate is now active. This reduces touch input latency but may increase battery consumption</string>
-    <string name="touch_sampling_tile_label">Touch Boost</string>
-    
     <!-- Auto hbm -->
     <string name="auto_hbm_title">Automatic High Brightness Mode (HBM)</string>
     <string name="auto_hbm_main_switch_title">Use automatic HBM</string>
