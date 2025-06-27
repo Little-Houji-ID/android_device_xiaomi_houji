@@ -449,6 +449,10 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.xiaomi)
 $(call soong_config_set,qti_vibrator,use_effect_stream,true)
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v34/arm64/arch-arm64-armv8-a/shared/vndk-core/libaudioroute.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaudioroute-v34.so
+
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
