@@ -102,6 +102,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcne.so'
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
+    ('odm/lib64/hw/camera.xiaomi.so'): blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
     (
         'vendor/lib64/libqcodec2_core.so',
     ):blob_fixup()
