@@ -103,6 +103,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbinder_shim.so'),
     ('vendor/lib64/hw/audio.primary.pineapple.so', 'vendor/lib64/libaudioroute_ext.so'): blob_fixup()
         .add_needed('libaudioroute-v34.so'),
+    ('odm/lib64/hw/camera.xiaomi.so'): blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
     (
         'vendor/lib64/libqcodec2_core.so',
     ):blob_fixup()
