@@ -18,6 +18,9 @@
     <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
     <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
+    <!-- Wifi driver supports 6GHz band for softap -->
+    <bool translatable="false" name="config_wifiSoftap6ghzSupported">true</bool>
+    
     <!-- Boolean indicating that enable roaming between linked networks -->
     <bool name="config_wifiEnableLinkedNetworkRoaming">false</bool>
 
