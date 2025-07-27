@@ -102,6 +102,13 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcne.so'
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
+    (
+        'vendor/lib64/libdlbdsservice.so',
+        'vendor/lib64/libdlbpreg.so',
+        'vendor/lib64/soundfx/libdlbvol.so',
+        'vendor/lib64/soundfx/libhwdap.so',
+    ): blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
