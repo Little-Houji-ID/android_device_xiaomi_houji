@@ -28,6 +28,7 @@ type vendor_modem_data_file, data_file_type, file_type;
 
 # Thermal data
 type vendor_thermal_data_file, file_type, data_file_type;
+type thermal_data_file, data_file_type, file_type;
 
 # Touchfeature
 type proc_tp_file, fs_type, proc_type;
@@ -47,3 +48,6 @@ type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
 type vendor_ins_vendor_data_file, data_file_type, file_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
 type vendor_sysfs_iio, fs_type, sysfs_type;
+type sys_thermal_wifi_limit, fs_type, sysfs_type;
+type sys_thermal_flash_state, fs_type, sysfs_type;
+type sys_thermal_torch_real_level, fs_type, sysfs_type;
