@@ -105,7 +105,8 @@ PRODUCT_PACKAGES += \
     libfmpal \
     vendor.qti.hardware.AGMIPC@1.0 \
     vendor.qti.hardware.AGMIPC@1.0-impl \
-    vendor.qti.audio-adsprpc-service.rc
+    vendor.qti.audio-adsprpc-service.rc \
+    sound_trigger.primary.pineapple
 
 PRODUCT_PACKAGES += \
     libar-acdb \
