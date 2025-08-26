@@ -64,6 +64,18 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/sensors/hals.conf': blob_fixup()
         .add_line_if_missing('sensors.xiaomi.v2.so'),
     (
+        'odm/etc/camera/enhance_motiontuning.xml',
+        'odm/etc/camera/night_motiontuning.xml',
+        'odm/etc/camera/motiontuning.xml'
+    ): blob_fixup()
+        .regex_replace('xml=version', 'xml version'),
+    (
+        'odm/lib64/libcamxcommonutils.so',
+        'vendor/lib64/libcameraopt.so',
+        'odm/lib64/hw/camera.qcom.so'
+    ): blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
+    (
         'vendor/etc/media_codecs_pinaepple.xml', 
         'vendor/etc/media_codecs_pinaepple_vendor.xml'
     ): blob_fixup()
