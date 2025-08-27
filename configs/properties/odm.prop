@@ -1,10 +1,26 @@
+# Bluetooth
+bluetooth.device.default_name=Xiaomi 14
+
 # Camera
 debug.config.video.p3.encode.support=true
 debug.config.video.p3.decode.support=true
 
 # Display
-ro.vendor.touchfeature.type=247
+vendor.display.enable_qsync_timer=1
 vendor.display.enable_spr=1
+ro.vendor.whitepoint_calibration_enable=false
+ro.vendor.touchfeature.type=247
+ro.vendor.mi_sf.supported_automode_maxfps_list=120
+ro.vendor.mi_sf.support_automode_for_normalfps=false
+ro.vendor.mi_sf.qsync_support=true
+ro.vendor.mi_sf.qsync_support_min_fps_range=10,60
+ro.vendor.mi_sf.gallery_p3_dolby_opt=true
+ro.vendor.display.primary_idle_refresh_rate=10,10:528
+ro.vendor.display.dobly_dpu.enable=true
+ro.vendor.dfps.enable=false
+persist.vendor.disable_idle_fps=false
+persist.vendor.disable_idle_fps.threshold=0
+persist.sys.miui_resolution=1200,2670,480
 
 # displayfeature
 persist.sys.sf.native_mode=258
@@ -65,6 +81,14 @@ ro.hardware.fp.fod.lowlight.lux.threshold=3
 ro.hardware.fp.fod.lowlight.brightness.threshold=411
 ro.hardware.fp.fod=true
 ro.hardware.fp.mievent=true
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=600|2390|109
+
+# Marketname
+ro.product.marketname=Xiaomi 14
 
 # Qti
 ro.vendor.qti.va_odm.support=1
+
+# USB
+vendor.usb.product_string=Xiaomi 14
