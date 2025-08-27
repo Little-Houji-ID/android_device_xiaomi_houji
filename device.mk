@@ -5,7 +5,7 @@
 #
 
 # Call the proprietary setup.
-$(call inherit-product, vendor/xiaomi/sm8650-common/sm8650-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/houji/houji-vendor.mk)
 
 # Enable virtual AB with vendor ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
