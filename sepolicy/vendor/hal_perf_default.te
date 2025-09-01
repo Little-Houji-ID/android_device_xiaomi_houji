@@ -1,5 +1,6 @@
 # Audio
 allow vendor_hal_perf_default hal_audio_default:dir { search };
+allow vendor_hal_perf_default hal_audio_default:file { open read getattr };
 
 # Camera
 allow vendor_hal_perf_default hal_camera_default:dir r_dir_perms;
