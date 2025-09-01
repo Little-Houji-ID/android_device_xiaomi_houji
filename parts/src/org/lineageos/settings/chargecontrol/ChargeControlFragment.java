@@ -40,6 +40,7 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
     private MainSwitchPreference mChargeControlSwitch;
 
     private CustomSeekBarPreference mStopChargingPreference;
+    private CustomSeekBarPreference mResumeChargingPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -61,6 +62,12 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
             mStopChargingPreference.setEnabled(false);
         }
         mStopChargingPreference.setVisible(mChargeControlSwitch.isChecked());
+
+        mResumeChargingPreference = findPreference(Constants.KEY_RESUME_CHARGING);
+        mResumeChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_RESUME_CHARGING,
+                Integer.parseInt(Constants.DEFAULT_RESUME_CHARGING)));
+        mResumeChargingPreference.setOnPreferenceChangeListener(this);
+        mResumeChargingPreference.setVisible(mChargeControlSwitch.isChecked());
     }
 
     @Override
@@ -70,6 +77,8 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
         prefChange.putBoolean(Constants.KEY_CHARGE_CONTROL, isChecked).apply();
 
         mStopChargingPreference.setVisible(isChecked);
+
+        mResumeChargingPreference.setVisible(isChecked);
 
         if (!isChecked) {
             FileUtils.writeValue(Constants.NODE_STOP_CHARGING, "0");
@@ -101,6 +110,13 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
                 }
             }
             return true;
+        } else if (preference == mResumeChargingPreference) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int value = Integer.parseInt(newValue.toString());
+            sharedPrefs.edit().putInt(Constants.KEY_RESUME_CHARGING, value).apply();
+            mResumeChargingPreference.refresh(value);
+            Toast.makeText(getContext(), getString(R.string.resume_charging_set_to, value), Toast.LENGTH_SHORT).show();
+            return true;
         }
         return false;
     }
@@ -110,9 +126,25 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
         boolean chargeControlEnabled = sharedPrefs.getBoolean(Constants.KEY_CHARGE_CONTROL, true);
 
         if (chargeControlEnabled && FileUtils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
-            int value = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
-                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING)));
-            FileUtils.writeValue(Constants.NODE_STOP_CHARGING, "0");
+            int stopValue = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
+                    Integer.parseInt(FileUtils.readOneLine(Constants.NODE_STOP_CHARGING) != null ? FileUtils.readOneLine(Constants.NODE_STOP_CHARGING) : Constants.DEFAULT_STOP_CHARGING));
+            int resumeValue = sharedPrefs.getInt(Constants.KEY_RESUME_CHARGING,
+                    Integer.parseInt(Constants.DEFAULT_RESUME_CHARGING));
+            
+            // Check current battery level and apply appropriate setting
+            android.content.IntentFilter ifilter = new android.content.IntentFilter(android.content.Intent.ACTION_BATTERY_CHANGED);
+            android.content.Intent batteryStatus = context.registerReceiver(null, ifilter);
+            if (batteryStatus != null) {
+                int level = batteryStatus.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, -1);
+                int scale = batteryStatus.getIntExtra(android.os.BatteryManager.EXTRA_SCALE, 100);
+                int percent = (int) ((level / (float) scale) * 100);
+                
+                if (percent >= stopValue) {
+                    FileUtils.writeLine(Constants.NODE_STOP_CHARGING, "1");
+                } else if (percent <= resumeValue) {
+                    FileUtils.writeLine(Constants.NODE_STOP_CHARGING, "0");
+                }
+            }
         }
     }
 }

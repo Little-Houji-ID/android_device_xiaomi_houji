@@ -133,11 +133,14 @@
     <string name="charge_control_main_switch_title">Enable charging control</string>
     <string name="stop_charging_title">Stop charging level</string>
     <string name="stop_charging_summary">Stop charging when the set percentage is reached</string>
+    <string name="resume_charging_title">Resume charging level</string>
+    <string name="resume_charging_summary">Resume charging when the battery level drops to this percentage</string>
     <string name="charge_control_footer_summary">Charging control may interfere with adaptive charging.</string>
     <string name="kernel_node_access_error">Kernel node not accessible</string>
     <string name="stop_charging_set_to">Charging will stop at %1$d%%.</string>
+    <string name="resume_charging_set_to">Charging will resume at %1$d%%.</string>
     <string name="charge_control_tile_label">Charge Control</string>
     <string name="charge_control_tile_enabled">Enabled</string>
     <string name="charge_control_tile_disabled">Disabled</string>
-    <string name="charge_control_tile_subtitle">Stop at %1$d%%</string>
+    <string name="charge_control_tile_subtitle">Stop at %1$d%%, resume at %2$d%%</string>
 </resources>

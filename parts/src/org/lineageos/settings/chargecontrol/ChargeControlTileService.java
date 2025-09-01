@@ -47,9 +47,10 @@ public class ChargeControlTileService extends TileService {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean enabled = prefs.getBoolean(Constants.KEY_CHARGE_CONTROL, false);
         int stopValue = prefs.getInt(Constants.KEY_STOP_CHARGING, 100);
+        int resumeValue = prefs.getInt(Constants.KEY_RESUME_CHARGING, 100);
         tile.setLabel(getString(R.string.charge_control_tile_label));
         if (enabled) {
-            tile.setSubtitle(getString(R.string.charge_control_tile_subtitle, stopValue));
+            tile.setSubtitle(getString(R.string.charge_control_tile_subtitle, stopValue, resumeValue));
             tile.setState(Tile.STATE_ACTIVE);
             tile.setIcon(Icon.createWithResource(this, R.drawable.ic_battery_charging_60));
         } else {

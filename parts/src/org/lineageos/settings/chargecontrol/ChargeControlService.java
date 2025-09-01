@@ -80,6 +80,7 @@ public class ChargeControlService extends Service {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean enabled = prefs.getBoolean(Constants.KEY_CHARGE_CONTROL, false);
         int stopValue = prefs.getInt(Constants.KEY_STOP_CHARGING, 100);
+        int resumeValue = prefs.getInt(Constants.KEY_RESUME_CHARGING, 100);
         int batteryLevel = mLastBatteryLevel;
         if (!enabled) {
             FileUtils.writeValue(Constants.NODE_STOP_CHARGING, "0");
@@ -91,7 +92,7 @@ public class ChargeControlService extends Service {
                 mLastChargingState = true;
                 Log.d(TAG, "Charging stopped at " + batteryLevel + "%");
             }
-        } else {
+        } else if (batteryLevel <= resumeValue) {
             if (mLastChargingState) {
                 FileUtils.writeValue(Constants.NODE_STOP_CHARGING, "0");
                 mLastChargingState = false;
