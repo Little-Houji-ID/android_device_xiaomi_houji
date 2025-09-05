@@ -92,15 +92,20 @@ PRODUCT_PACKAGES += \
     libagm_pcm_plugin \
     libagmclient \
     libbatterylistener \
+    libaudiochargerlistener \
+    libaudioroute.vendor \
     libpalclient \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndcardparser \
     libvolumelistener \
+    libtinycompress \
     libhfp_pal \
     libfmpal \
-    vendor.qti.hardware.AGMIPC@1.0-impl
+    vendor.qti.hardware.AGMIPC@1.0 \
+    vendor.qti.hardware.AGMIPC@1.0-impl \
+    vendor.qti.audio-adsprpc-service.rc
 
 PRODUCT_PACKAGES += \
     libar-acdb \
