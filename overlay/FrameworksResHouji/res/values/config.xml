@@ -445,6 +445,12 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
+    <!-- The minimum refresh rate allowed for the device. Setting this to 0 means
+         the system will automatically use the lowest refresh rate mode exposed by
+         the display hardware. A non-zero value forces the system to stay at or
+         above the specified refresh rate. -->
+    <integer name="config_minRefreshRate">0</integer>
+
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
     <!-- Specifies the maximum burn-in offset displacement from the center. If -1, no maximum value
