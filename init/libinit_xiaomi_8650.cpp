@@ -78,35 +78,6 @@ void vendor_load_properties() {
             set_ro_build_prop("model", "23127PN0CG");
             set_ro_build_prop("name", "houji_global");
         }
-    } else if (sku == "shennong") { // Xiaomi 14 Pro
-        if (region == "CN") { // China
-            set_ro_build_prop("model", "23116PN5BC");
-            set_ro_build_prop("name", "shennong_global");
-        } else {              // China (Satellite Edition)
-            set_ro_build_prop("model", "2311BPN23C");
-            set_ro_build_prop("name", "shennong");
-        }
-    } else if (sku == "aurora") { // Xiaomi 14 Ultra
-        if (region == "CN") { // China
-            set_ro_build_prop("model", "24031PN0DC");
-            set_ro_build_prop("name", "aurora");
-        } else {              // Global
-            set_ro_build_prop("model", "24030PN60G");
-            set_ro_build_prop("name", "aurora_global");
-        }
-    } else if (sku == "ruyi") { // Xiaomi Mix Flip
-        if (region == "CN") { // China
-            set_ro_build_prop("model", "2405CPX3DC");
-            set_ro_build_prop("name", "ruyi");
-        } else {              // Global
-            set_ro_build_prop("model", "2405CPX3DG");
-            set_ro_build_prop("name", "ruyi_global");
-        }
-    }  else if (sku == "goku") { // Xiaomi Fold 4
-        if (region == "CN") { // China
-            set_ro_build_prop("model", "24072PX77C");
-            set_ro_build_prop("name", "goku");
-        }
     }
 
     // Override hardware revision
