@@ -279,7 +279,6 @@ vendor/etc/audio/sku_pineapple/resourcemanager_pineapple_mtp.xml
 vendor/etc/batching.conf
 vendor/etc/card-defs.xml
 vendor/etc/kvh2xml.xml
-vendor/etc/microphone_characteristics.xml
 
 # Audio (Dolby)
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
