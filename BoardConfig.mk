@@ -175,7 +175,7 @@ BOOT_SECURITY_PATCH := 2025-03-27
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # VINTF
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.device.xml \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xiaomi.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
@@ -188,8 +188,7 @@ DEVICE_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml \
     hardware/qcom-caf/common/compatibility_matrix.xml
 
-DEVICE_MANIFEST_SKUS := pineapple
-DEVICE_MANIFEST_PINEAPPLE_FILES := \
+DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_pineapple.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
