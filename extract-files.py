@@ -122,6 +122,9 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libhwdap.so',
     ): blob_fixup()
         .add_needed('libstagefright_foundation-v33.so'),
+    'vendor/etc/media_codecs_pineapple.xml': blob_fixup()
+        .regex_replace('</MediaCodecs>','    <Include href="media_codecs_dolby_audio.xml" />')
+        .add_line_if_missing('</MediaCodecs>'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

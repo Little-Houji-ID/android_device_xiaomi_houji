@@ -213,6 +213,9 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 # AGM
 vendor/lib64/libagm.so;DISABLE_CHECKELF
 
+# Audio Dolby
+#vendor/lib64/libspatializerparamstorage.so;DISABLE_CHECKELF
+
 # Audio
 odm/etc/audio/silent-3sec.wav
 odm/lib64/libaudioroute_ext.so
@@ -251,7 +254,7 @@ vendor/lib64/libmispowerop.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libresampler.so
-vendor/lib64/libswspatializer_ext.so
+#vendor/lib64/libswspatializer_ext.so;DISABLE_CHECKELF
 vendor/lib64/libtensorflowlite_c.so
 vendor/lib64/libultrasound_notify.so
 vendor/lib64/libxlog.so
@@ -279,26 +282,6 @@ vendor/etc/batching.conf
 vendor/etc/card-defs.xml
 vendor/etc/kvh2xml.xml
 
-# Audio (Dolby)
-vendor/lib64/libspatializerparamstorage.so
-
-# Audio FX modules
-vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
-vendor/lib64/soundfx/libbundlewrapper.so
-vendor/lib64/soundfx/libdownmix.so
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libeffectproxy.so
-vendor/lib64/soundfx/libhwdap.so
-vendor/lib64/soundfx/libldnhncr.so
-vendor/lib64/soundfx/libmisoundfx_n2.so
-vendor/lib64/soundfx/libquasar.so
-vendor/lib64/soundfx/libreverbwrapper.so
-vendor/lib64/soundfx/libshoebox.so
-vendor/lib64/soundfx/libspatializer_fx.so
-vendor/lib64/soundfx/libspatializer.so
-vendor/lib64/soundfx/libswspatializer.so
-vendor/lib64/soundfx/libvisualizer.so
 
 # Audio firmware
 odm/firmware/B-cs35l41-dsp1-spk-cali.bin
@@ -2374,7 +2357,6 @@ vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_pineapple.xml
 vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
-vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libQcelp13SwCodec.so

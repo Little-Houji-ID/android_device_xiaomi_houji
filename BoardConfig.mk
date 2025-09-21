@@ -188,8 +188,7 @@ DEVICE_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml \
     hardware/qcom-caf/common/compatibility_matrix.xml
 
-DEVICE_MANIFEST_SKUS := pineapple
-DEVICE_MANIFEST_PINEAPPLE_FILES += \
+DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_pineapple.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa.xml \

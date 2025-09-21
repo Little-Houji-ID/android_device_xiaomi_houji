@@ -51,7 +51,6 @@ ro.vendor.audio.karaoke.enable=true
 ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.dolby.dax.version=DAX3_3.8.5.20_r1
 ro.vendor.audio.dolby.spatial.profile=dynamic
-ro.vendor.audio.dolby.surround.enable=true
 ro.vendor.audio.dolby.vision.support=true
 ro.vendor.audio.dualadc.support=true
 ro.vendor.audio.feature.fade=true
@@ -269,7 +268,6 @@ persist.sys.sf.native_mode=258
 # Dolby
 ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.dolby.dax.version=DAX3_3.8.5.20_r1
-ro.vendor.audio.dolby.surround.enable=true
 ro.vendor.audio.dolby.vision.support=true
 ro.vendor.audio.feature.spatial=7
 
