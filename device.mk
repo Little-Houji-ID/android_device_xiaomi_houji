@@ -25,6 +25,9 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 # SHIPPING API
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34

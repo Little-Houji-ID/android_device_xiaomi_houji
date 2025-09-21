@@ -79,21 +79,18 @@
         <library name="misoundfx" path="libmisoundfx.so"/>
         <!--DOLBY START-->
         <library name="shoebox" path="libshoebox.so"/>
-        <!--DOLBY DAP-->
-        <!--AUDIO MOD-->
-        <library name="dap" path="libhwdap.so"/>
-        <!-- <library name="dap_sw" path="libswdap.so"/> -->
-        <!-- <library name="dap_hw" path="libhwdap.so"/> -->
-        <!--AUDIO END-->
+            <!--DOLBY DAP-->
+        <library name="dap" path="libswdap.so"/>
         <library name="dvl" path="libdlbvol.so"/>
-        <!--DOLBY SPATIALIZER-->
-        <library name="spatializer" path="libswspatializer.so"/>
-        <!--DOLBY GAME-->
+            <!--DOLBY END-->
+            <!--DOLBY GAME-->
         <library name="gamedap" path="libswgamedap.so"/>
-        <!--DOLBY VQE-->
+            <!--DOLBY END-->
+            <!--DOLBY VQE-->
         <library name="vqe" path="libswvqe.so"/>
-        <!--DOLBY END-->
-        <library name="ozo_processing" path="libozoprocessing.so"/>
+            <!--DOLBY END-->
+            <!--Spatial Audio-->
+        <library name="spatializer" path="libspatialaudio.so"/>
     </libraries>
     <effects>
         <effectProxy name="bassboost" library="proxy" uuid="14804144-a5ee-4d24-aa88-0002a5d5c51b">
@@ -144,30 +141,24 @@
         <effect name="quasar" library="quasar" uuid="71d0e2ee-e44d-483d-a809-09e75ee55ecd"/>
         <effect name="mispatializer" library="mispatializer" uuid="bb8c97a8-cc6c-11ec-9d64-0242ac120002"/>
         <effect name="misoundfx" library="misoundfx" uuid="5b8e36a5-144a-4c38-b1d7-0002a5d5c51b"/>
-        <!--DOLBY START-->
         <!--DOLBY DAP-->
-        <!--AUDIO MOD: we only need one schema-->
         <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
-        <!--
-        <effectProxy name="dap" library="proxy" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa">
-            <libsw library="dap_sw" uuid="6ab06da4-c516-4611-8166-452799218539"/>
-            <libhw library="dap_hw" uuid="a0c30891-8246-4aef-b8ad-d53e26da0253"/>
-        </effectProxy>
-        -->
-        <!--AUDIO END-->
         <effect name="dlb_music_listener" library="dvl" uuid="40f66c8b-5aa5-4345-8919-53ec431aaa98"/>
-        <!-- <effect name="dlb_ring_listener" library="dvl" uuid="21d14087-558a-4f21-94a9-5002dce64bce"/>
-        <effect name="dlb_alarm_listener" library="dvl" uuid="6aff229c-30c6-4cc8-9957-dbfe5c1bd7f6"/> -->
-        <!--<effect name="dlb_system_listener" library="dvl" uuid="874db4d8-051d-4b7b-bd95-a3bebc837e9e"/>-->
-        <!-- <effect name="dlb_notification_listener" library="dvl" uuid="1f0091e3-6ad8-40fe-9b09-5948f9a26e7e"/> -->
-        <!--DOLBY SPATIALIZER-->
-        <effect name="spatializer" library="spatializer" uuid="ccd4cf09-a79d-46c2-9aae-06a1698d6c8f"/>
+        <effect name="dlb_ring_listener" library="dvl" uuid="21d14087-558a-4f21-94a9-5002dce64bce"/>
+        <effect name="dlb_alarm_listener" library="dvl" uuid="6aff229c-30c6-4cc8-9957-dbfe5c1bd7f6"/>
+        <effect name="dlb_system_listener" library="dvl" uuid="874db4d8-051d-4b7b-bd95-a3bebc837e9e"/>
+        <effect name="dlb_notification_listener" library="dvl" uuid="1f0091e3-6ad8-40fe-9b09-5948f9a26e7e"/>
+        <effect name="dlb_voice_call_listener" library="dvl" uuid="58d13383-b41d-05df-d94e-bb23db293260"/>
+        <!--DOLBY END-->
         <!--DOLBY GAME-->
         <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
-        <!--DOLBY VQE-->
+            <!--DOLBY END-->
+            <!--DOLBY VQE-->
         <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
-        <!--DOLBY END-->
-        <effect name="ozo" library="ozo_processing" uuid="7e384a3b-7850-4a64-a097-884250d8a737"/>
+            <!--DOLBY END-->
+            <!--Spatial Audio-->
+        <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
+	    <!--Spatial Audio-->
     </effects>
     <postprocess>
         <stream type="music">

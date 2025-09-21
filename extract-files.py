@@ -24,6 +24,7 @@ namespace_imports = [
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/sm8650',
     'hardware/xiaomi',
+    'hardware/dolby',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
 ]
