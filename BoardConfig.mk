@@ -191,6 +191,7 @@ DEVICE_MATRIX_FILE := \
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_pineapple.xml \
+    $(DEVICE_PATH)/configs/media/c2_manifest_vendor.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
