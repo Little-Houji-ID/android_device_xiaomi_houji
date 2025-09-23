@@ -28,6 +28,9 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+# FOD
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/xiaomi:libudfps_extension.xiaomi)
+
 # SHIPPING API
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34

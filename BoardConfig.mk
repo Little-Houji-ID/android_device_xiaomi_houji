@@ -5,7 +5,6 @@
 #
 
 DEVICE_PATH := device/xiaomi/houji
-KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -56,10 +55,6 @@ TARGET_PROVIDES_AUDIO_HAL := true
 TARGET_PROVIDES_LIBAR_PAL := true
 TARGET_PROVIDES_LIBAGM := true
 
-# Boot
-BOARD_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := pineapple
 TARGET_NO_BOOTLOADER := true
@@ -71,56 +66,90 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 # Display
 TARGET_SCREEN_DENSITY := 480
 
-# Dtb/o
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
-
 # Init
 TARGET_RECOVERY_DEVICE_MODULES := libinit_xiaomi_8650
 
-# Init Boot
-BOARD_INIT_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
-
 # Kernel
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_BASE := 0x00000000
-TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-PRODUCT_COPY_FILES += \
-	$(KERNEL_PATH)/kernel:kernel
-
-BOARD_KERNEL_CMDLINE := \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    disable_dma32=on \
-    swinfo.fingerprint=$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=$(LINEAGE_VERSION)
-
-BOARD_BOOTCONFIG := \
-    androidboot.hardware=qcom \
-    androidboot.hypervisor.protected_vm.supported=0 \
-    androidboot.load_modules_parallel=true \
-    androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.vendor.qspa=true \
-    androidboot.console=0
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+TARGET_NEEDS_DTBOIMAGE := true
 
 BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
-# Kernel modules
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/vendor_ramdisk/modules.blocklist
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load.recovery))
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_dlkm/modules.load))
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/vendor_dlkm/,$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules) \
-    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/vendor_ramdisk/,$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/modules) \
-    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm_flatten/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/flatten/lib/modules) \
-    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/lib/modules/6.1.118-android14-11-ga3b9c44908dd-ab13320413)
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
+BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8650
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/pineapple_GKI.config \
+    vendor/houji_GKI.config
+
+BOARD_KERNEL_CMDLINE := \
+    video=vfb:640x400,bpp=32,memsize=3072000 \
+    swinfo.fingerprint=houji:$(LINEAGE_VERSION) \
+    mtdoops.fingerprint=houji:$(LINEAGE_VERSION)
+
+BOARD_BOOTCONFIG := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.load_modules_parallel=true \
+    androidboot.vendor.qspa=true \
+    androidboot.hypervisor.protected_vm.supported=false
+
+# Kernel modules
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.system_dlkm))
+SYSTEM_KERNEL_MODULES := $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules/modules.blocklist.vendor_dlkm
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_dlkm))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules/modules.blocklist.vendor_boot
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_boot))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.recovery))
+BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm8650-modules
+TARGET_KERNEL_EXT_MODULES := \
+    qcom/opensource/mmrm-driver \
+    qcom/opensource/mm-drivers/hw_fence \
+    qcom/opensource/mm-drivers/msm_ext_display \
+    qcom/opensource/mm-drivers/sync_fence \
+    qcom/opensource/securemsm-kernel \
+    qcom/opensource/audio-kernel \
+    qcom/opensource/synx-kernel \
+    qcom/opensource/camera-kernel \
+    qcom/opensource/datarmnet-ext/mem \
+    qcom/opensource/dataipa/drivers/platform/msm \
+    qcom/opensource/datarmnet/core \
+    qcom/opensource/datarmnet-ext/aps \
+    qcom/opensource/datarmnet-ext/offload \
+    qcom/opensource/datarmnet-ext/shs \
+    qcom/opensource/datarmnet-ext/perf \
+    qcom/opensource/datarmnet-ext/perf_tether \
+    qcom/opensource/datarmnet-ext/sch \
+    qcom/opensource/datarmnet-ext/wlan \
+    qcom/opensource/display-drivers/msm \
+    qcom/opensource/dsp-kernel \
+    qcom/opensource/eva-kernel \
+    qcom/opensource/video-driver \
+    qcom/opensource/graphics-kernel \
+    qcom/opensource/wlan/platform \
+    qcom/opensource/wlan/qcacld-3.0/.qca6750 \
+    qcom/opensource/bt-kernel \
+    qcom/opensource/spu-kernel \
+    qcom/opensource/mm-sys-kernel/ubwcp \
+    qcom/opensource/touch-drivers \
+    nxp/opensource/driver
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -178,8 +207,7 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.device.xml \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xiaomi.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/framework_manifest.xml
